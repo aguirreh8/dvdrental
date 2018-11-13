@@ -1,4 +1,4 @@
-const orm = require("../connectons/orm.js");
+const orm = require("../connections/orm.js");
 
 const rentals = {
 	select: function(cb) {
@@ -8,4 +8,4 @@ const rentals = {
 	}
 }
 
-module.exports = burger;
+module.exports = rentals;
