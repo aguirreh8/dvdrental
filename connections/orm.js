@@ -3,7 +3,7 @@ const connection = require("./connection.js");
 const orm = {
 	select: function(cb) {
 		connection.query(
-			"SELECT * FROM actor"
+			"SELECT * FROM actor LIMIT 5"
 		,
 		function(err, data) {
 			if (err) {
