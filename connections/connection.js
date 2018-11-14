@@ -8,7 +8,7 @@ client.connect(function(err) {
     return console.error('could not connect to postgres', err);
   }
   
-  console.log("Connected to PostrgreSQL PORT:5432 DB: dvdrental");
+  console.log("Connected to PostrgreSQL PORT:5432 DB:dvdrental");
 });
 
 module.exports = client;

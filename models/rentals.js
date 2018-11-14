@@ -1,3 +1,4 @@
+// Create connection to object relational mapping
 const orm = require("../connections/orm.js");
 
 const rentals = {
