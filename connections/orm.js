@@ -15,9 +15,19 @@ const orm = {
 			cb(data);
 		}
 		);
+	},
+
+	insert: function(firstName, lastName, date, cb) {
+		connection.query(
+			"INSERT INTO actor(first_name, last_name, last_update) VALUES(??, ??, ??)",
+			[firstName, lastName, date],
+			function(err, data) {
+				if (err) {
+					throw err;
+				}
+				cb(data);
+			})
 	}
-
-
 }
 
 // Export object
