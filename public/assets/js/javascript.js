@@ -1,4 +1,4 @@
-$("#submitInfo").click(function(e) {
+$("#insert").click(function(e) {
 	e.preventDefault();
 	const myDate = new Date();
 

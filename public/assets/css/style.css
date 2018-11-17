@@ -6,10 +6,16 @@
 
 .box {
 	float: left;
-	margin: 0 5px 0 5px;
+	margin: 5px 5px 0 5px;
 	border: 2px solid;
 	padding: 10px;
 	text-align: center;
 	width: 450px;
 	height: 150px;
+}
+
+.submit-button {
+	display: block;
+	margin: 0 auto;
+	margin-top: 20px;
 }
