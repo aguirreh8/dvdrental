@@ -18,10 +18,10 @@ const orm = {
 	},
 
 	// Insert into actor table
-	insert: function(firstName, lastName, date, cb) {
+	insert: function(firstName, lastName, cb) {
 		connection.query(
-			"INSERT INTO actor(first_name, last_name, last_update) VALUES(??, ??, ??)",
-			[firstName, lastName, date],
+			"INSERT INTO actor(first_name, last_name) VALUES($1, $2)",
+			[firstName, lastName],
 			function(err, data) {
 				if (err) {
 					throw err;

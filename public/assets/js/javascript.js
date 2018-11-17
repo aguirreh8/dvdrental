@@ -6,9 +6,10 @@ $("#submitInfo").click(function(e) {
 		firstName: $("#firstName").val(),
 		lastName: $("#lastName").val(),
 		date: myDate
-	}
+	};
 
-	console.log(newActor);
-	// $.post("/api/new", )
-	// .then(function(res) {})
+	$.post("/api/new", newActor)
+	.then(function(res) {
+		location.reload();
+	})
 })

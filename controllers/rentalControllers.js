@@ -16,4 +16,12 @@ router.get("/api", function(req, res) {
 	})
 });
 
+router.post("/api/new", function(req, res) {
+	const firstName = req.body.firstName;
+	const lastName = req.body.lastName;
+	rentals.insert(firstName, lastName, function(res) {
+		console.log(res);
+	})
+})
+
 module.exports = router;

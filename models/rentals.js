@@ -8,8 +8,8 @@ const rentals = {
 		})
 	},
 
-	insert: function(firstName, lastName, date, cb) {
-		orm.insert(firstName, lastName, date, function(res) {
+	insert: function(firstName, lastName, cb) {
+		orm.insert(firstName, lastName, function(res) {
 			cb(res);
 		})
 	}
