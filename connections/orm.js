@@ -17,6 +17,7 @@ const orm = {
 		);
 	},
 
+	// Insert into actor table
 	insert: function(firstName, lastName, date, cb) {
 		connection.query(
 			"INSERT INTO actor(first_name, last_name, last_update) VALUES(??, ??, ??)",
