@@ -28,6 +28,19 @@ const orm = {
 				}
 				cb(data);
 			})
+	},
+
+	delete: function(id, cb) {
+		connection.query(
+			"DELETE FROM actor WHERE id = $1",
+			[id],
+			function(err, data) {
+				if (err) {
+					throw err;
+				}
+				cb(data);
+			})
+
 	}
 }
 

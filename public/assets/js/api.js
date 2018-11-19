@@ -13,3 +13,14 @@ $("#insert").click(function(e) {
 		location.reload();
 	})
 })
+
+$("#delete").click(e => {
+	e.preventDefault();
+	const idToDelete = $("#idCounter").val();
+	
+	$.ajax(`/api/delete/${idToDelete}`, {
+		type: "DELETE",
+	})
+	.then((res) => console.log(res));
+	
+})
