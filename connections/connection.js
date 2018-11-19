@@ -1,6 +1,14 @@
 // Use pg dependency to connect to PostgreSQL database
 const pg = require("pg");
-const connectionString = "postgres://postgres:player247508@localhost:5432/dvdrental";
+// Connection cofiguration variables for simple modificatoins
+const username = "postgres";
+const password = "mypostgresserver";
+const server = "localhost";
+const port = "5432";
+const database = "dvdrental";
+
+// const connectionString = `postgres://postgres:mypostgresserver@localhost:5432/dvdrental`;
+const connectionString = `postgres://${username}:${password}@${server}:${port}/${database}`;
 
 const client = new pg.Client(connectionString);
 
