@@ -6,8 +6,7 @@ const password = "mypostgresserver";
 const server = "localhost";
 const port = "5432";
 const database = "dvdrental";
-
-// const connectionString = `postgres://postgres:mypostgresserver@localhost:5432/dvdrental`;
+// Complete connection string
 const connectionString = `postgres://${username}:${password}@${server}:${port}/${database}`;
 
 const client = new pg.Client(connectionString);
@@ -18,7 +17,7 @@ client.connect(function(err) {
     return console.error('could not connect to postgres', err);
   }
   
-  console.log("Connected to PostrgreSQL PORT:5432 DB:dvdrental");
+  console.log(`Connected to PostrgreSQL PORT:${port} DB:${database}`);
 });
 
 module.exports = client;
