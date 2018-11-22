@@ -1,5 +1,13 @@
 $(document).ready(() => {
-	
+	$.get("/api/allId")
+	.then(function(res) {
+		for (let i = 0; i < res.length; i++) {
+			console.log(res[i].actor_id);
+			const idOption = $(`<option value='${res[i].actor_id}'>`);
+			idOption.text(res[i].actor_id);
+			$("#idCounter").append(idOption);
+		}		
+	})
 })
 
 $("#insert").click(function(e) {

@@ -16,6 +16,12 @@ router.get("/api", function(req, res) {
 	})
 });
 
+router.get("/api/allId", function(req, res) {
+	rentals.selectAllIDs(function(data) {
+		return res.json(data.rows);
+	})
+});
+
 router.post("/api/new", function(req, res) {
 	const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
