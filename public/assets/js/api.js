@@ -1,3 +1,7 @@
+$(document).ready(() => {
+	
+})
+
 $("#insert").click(function(e) {
 	e.preventDefault();
 	const myDate = new Date();
@@ -10,7 +14,7 @@ $("#insert").click(function(e) {
 
 	$.post("/api/new", newActor)
 	.then(function(res) {
-		location.reload();
+		console.log(res);
 	})
 })
 
@@ -22,5 +26,5 @@ $("#delete").click(e => {
 		type: "DELETE",
 	})
 	.then((res) => console.log(res));
-	
+
 })

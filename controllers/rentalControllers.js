@@ -19,8 +19,15 @@ router.get("/api", function(req, res) {
 router.post("/api/new", function(req, res) {
 	const firstName = req.body.firstName;
 	const lastName = req.body.lastName;
-	rentals.insert(firstName, lastName, function(res) {
-		console.log(res);
+	rentals.insert(firstName, lastName, function(data) {
+		return res.json(data);
+	})
+})
+
+router.delete("/api/delete/:id?", function(req, res) {
+	const id = req.params.id;
+	rentals.delete(id, function(data) {
+		return res.json(data);
 	})
 })
 

@@ -6,14 +6,26 @@ const orm = {
 	// Select all data
 	select: function(cb) {
 		connection.query(
-			"SELECT * FROM actor LIMIT 5"
-		,
+			"SELECT * FROM actor LIMIT 5",
 		function(err, data) {
 			if (err) {
 				throw err;
 			}
 			cb(data);
-		}
+			}
+		);
+	},
+
+	// Select all IDs currently present in actor database
+	selectAllIDs: function(cb) {
+		connection.query(
+			"SELECT actor_id FROM actor",
+			function(err, data) {
+				if (err) {
+					throw err;
+				}
+				cb(data);
+			}
 		);
 	},
 
@@ -32,7 +44,7 @@ const orm = {
 
 	delete: function(id, cb) {
 		connection.query(
-			"DELETE FROM actor WHERE id = $1",
+			"DELETE FROM actor WHERE actor_id = $1",
 			[id],
 			function(err, data) {
 				if (err) {
